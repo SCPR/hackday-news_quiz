@@ -1,8 +1,10 @@
-%h2 Done!
+%h2 Congrats!
 
 %p
-    You got
+    You got a score of 
     = @score
     points, in
     = @human_time
-    .
+    You are well on your way to becoming the KPCC’s Newsiest Person of the Year.
+
+%p Want to brag about your achievement? Tell your friends on Twitter and Facebook.

@@ -89,11 +89,22 @@ QUIZ
     -moz-box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.28);
     box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.28);
   }
+  button.next {
+    position: relative;
+    left: 0;
+    margin: .5em auto 0;
+    bottom:0;
+  }
   .question {
     font-size: 1em;
     font-weight: bold;
     margin: 0 1em;
     text-align: left;
+  }
+  .progress {
+    background-color:#F27A00;
+    position:relative;
+    top:-12px;
   }
   .answers {
     position: absolute;
@@ -119,6 +130,11 @@ QUIZ
     [data-idx="3"] {
       background-color:#EDC951;
     }
+  }
+  .correct:before {
+    content:url('../images/correct-us.png');
+    position:absolute;
+    left:12px;
   }
 }
 
