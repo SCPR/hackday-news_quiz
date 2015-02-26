@@ -150,10 +150,12 @@ class window.NewsQuiz
             @_answered      = false
 
         _startTimer: ->
-            @_start_time = _.now()
+            @_start_time    = _.now()
+            @_expires       = @_start_time + @seconds
+
             @_tInt = setInterval =>
                 taken = _.now() - @_start_time
-                console.log "Remaining time is ", @seconds - taken
+                #console.log "Remaining time is ", @seconds - taken
 
                 if taken > @seconds
                     console.log "Time expired. Now what?"
@@ -161,6 +163,17 @@ class window.NewsQuiz
                     @trigger "expired"
                     clearInterval @_tInt
             , 200
+
+            update = =>
+                remaining = @_expires - _.now()
+                percent = remaining / @seconds * 100
+                $(".progress").css width:"#{ percent }%"
+
+                if remaining > 0 && !@_answered
+                    window.requestAnimationFrame update
+
+
+            window.requestAnimationFrame update
 
         _endTimer: (cb) ->
             if @_tInt

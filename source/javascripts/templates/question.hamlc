@@ -3,6 +3,9 @@
 .question
     = @question
 
+%div{:style => "width:300px"}
+    .progress{:style => "height:4px;background-color:#000"}
+
 %ul.answers
     - for a,idx in @answers
         - cname = if @answered && idx == @correct then "correct" else ""
