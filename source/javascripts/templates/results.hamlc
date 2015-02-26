@@ -4,5 +4,5 @@
     You got
     = @score
     points, in
-    = @time
-    milliseconds.
+    = @human_time
+    .

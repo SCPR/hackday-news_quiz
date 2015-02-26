@@ -101,9 +101,20 @@ class window.NewsQuiz
 
                 obj
 
+            human_time = switch
+                when total_time < 60000
+                    "#{Math.round(total_time / 1000)} seconds"
+                when 60000 <= total_time < 120000
+                    "one minute and #{Math.round((total_time-60000) / 1000)} seconds"
+                else
+                    minutes = Math.floor( total_time / 60000 )
+                    seconds = Math.round( (total_time - minutes*60000) / 1000 )
+                    "#{minutes} minutes and #{seconds} seconds"
+
             answers:    answers
             score:      total_score
             time:       total_time
+            human_time: human_time
 
     #----------
 
@@ -175,7 +186,7 @@ class window.NewsQuiz
             @trigger "next"
 
         render: ->
-            @$el.html @template _.extend {}, @model.toJSON(), answered:@_answered
+            @$el.html @template _.extend {}, @model.toJSON(), answered:@_answered, index:(@model.collection.indexOf(@model)+1)
 
             # FIXME: there's a cleaner place to trigger this, I'm sure
             @_startTimer() if !@tInt && !@_answered
