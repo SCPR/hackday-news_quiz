@@ -9,12 +9,12 @@
       $e = window.HAML.escape;
       $c = window.HAML.cleanValue;
       $o = [];
-      $o.push("<h2>Done!</h2>\n<p>\n  You got");
+      $o.push("<h2>Congrats!</h2>\n<p>\n  You got a score of ");
       $o.push("  " + $e($c(this.score)));
       $o.push("  points, in");
       $o.push("  " + $e($c(this.human_time)));
-      $o.push("  <div class=''></div>\n</p>");
-      return $o.join("\n").replace(/\s([\w-]+)='true'/mg, ' $1').replace(/\s([\w-]+)='false'/mg, '').replace(/\s(?:id|class)=(['"])(\1)/mg, "");
+      $o.push("  You are well on your way to becoming the KPCC’s Newsiest Person of the Year.\n</p>\n<p>Want to brag about your achievement? Tell your friends on Twitter and Facebook.</p>");
+      return $o.join("\n").replace(/\s([\w-]+)='true'/mg, ' $1').replace(/\s([\w-]+)='false'/mg, '');
     }).call(window.HAML.context(context));
   };
 

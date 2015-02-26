@@ -24,9 +24,16 @@
       $e = window.HAML.escape;
       $c = window.HAML.cleanValue;
       $o = [];
-      $o.push("<div class='question'>\n  Question " + this.index + ":");
-      $o.push("  " + $e($c(this.question)));
-      $o.push("</div>\n<div style='width:300px'>\n  <div class='progress' style='height:4px;background-color:#000'></div>\n</div>\n<ul class='answers'>");
+      if (this.answered) {
+        $o.push("<p class='explainer'>");
+        $o.push("  " + $e($c(this.explainer)));
+        $o.push("</p>\n<button class='next'>\n  Go On!\n</button>");
+      } else {
+        $o.push("<div style='width:100%'>\n  <div class='progress' style='height:10px;'></div>\n</div>\n<div class='question'>\n  Question " + this.index + ":");
+        $o.push("  " + $e($c(this.question)));
+        $o.push("</div>");
+      }
+      $o.push("<ul class='answers'>");
       ref = this.answers;
       for (idx = i = 0, len = ref.length; i < len; idx = ++i) {
         a = ref[idx];
@@ -36,11 +43,6 @@
         $o.push("  </li>");
       }
       $o.push("</ul>");
-      if (this.answered) {
-        $o.push("<p class='explainer'>");
-        $o.push("  " + $e($c(this.explainer)));
-        $o.push("</p>\n<button class='next'>\n  Go On!\n</button>");
-      }
       return $o.join("\n").replace(/\s([\w-]+)='true'/mg, ' $1').replace(/\s([\w-]+)='false'/mg, '').replace(/\s(?:id|class)=(['"])(\1)/mg, "");
     }).call(window.HAML.context(context));
   };
@@ -57,12 +59,12 @@
       $e = window.HAML.escape;
       $c = window.HAML.cleanValue;
       $o = [];
-      $o.push("<h2>Done!</h2>\n<p>\n  You got");
+      $o.push("<h2>Congrats!</h2>\n<p>\n  You got a score of ");
       $o.push("  " + $e($c(this.score)));
       $o.push("  points, in");
       $o.push("  " + $e($c(this.human_time)));
-      $o.push("  <div class=''></div>\n</p>");
-      return $o.join("\n").replace(/\s([\w-]+)='true'/mg, ' $1').replace(/\s([\w-]+)='false'/mg, '').replace(/\s(?:id|class)=(['"])(\1)/mg, "");
+      $o.push("  You are well on your way to becoming the KPCC’s Newsiest Person of the Year.\n</p>\n<p>Want to brag about your achievement? Tell your friends on Twitter and Facebook.</p>");
+      return $o.join("\n").replace(/\s([\w-]+)='true'/mg, ' $1').replace(/\s([\w-]+)='false'/mg, '');
     }).call(window.HAML.context(context));
   };
 

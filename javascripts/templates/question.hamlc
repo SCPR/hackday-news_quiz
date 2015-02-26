@@ -9,9 +9,16 @@
       $e = window.HAML.escape;
       $c = window.HAML.cleanValue;
       $o = [];
-      $o.push("<div class='question'>\n  Question " + this.index + ":");
-      $o.push("  " + $e($c(this.question)));
-      $o.push("</div>\n<div style='width:300px'>\n  <div class='progress' style='height:4px;background-color:#000'></div>\n</div>\n<ul class='answers'>");
+      if (this.answered) {
+        $o.push("<p class='explainer'>");
+        $o.push("  " + $e($c(this.explainer)));
+        $o.push("</p>\n<button class='next'>\n  Go On!\n</button>");
+      } else {
+        $o.push("<div style='width:100%'>\n  <div class='progress' style='height:10px;'></div>\n</div>\n<div class='question'>\n  Question " + this.index + ":");
+        $o.push("  " + $e($c(this.question)));
+        $o.push("</div>");
+      }
+      $o.push("<ul class='answers'>");
       ref = this.answers;
       for (idx = i = 0, len = ref.length; i < len; idx = ++i) {
         a = ref[idx];
@@ -21,11 +28,6 @@
         $o.push("  </li>");
       }
       $o.push("</ul>");
-      if (this.answered) {
-        $o.push("<p class='explainer'>");
-        $o.push("  " + $e($c(this.explainer)));
-        $o.push("</p>\n<button class='next'>\n  Go On!\n</button>");
-      }
       return $o.join("\n").replace(/\s([\w-]+)='true'/mg, ' $1').replace(/\s([\w-]+)='false'/mg, '').replace(/\s(?:id|class)=(['"])(\1)/mg, "");
     }).call(window.HAML.context(context));
   };

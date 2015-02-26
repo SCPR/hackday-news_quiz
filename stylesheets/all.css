@@ -137,43 +137,59 @@ QUIZ
     -moz-box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.28);
     box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.28); }
   /* line 92, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+  #quiz button.next {
+    position: relative;
+    left: 0;
+    margin: .5em auto 0;
+    bottom: 0; }
+  /* line 98, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
   #quiz .question {
     font-size: 1em;
     font-weight: bold;
     margin: 0 1em;
     text-align: left; }
-  /* line 98, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+  /* line 104, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+  #quiz .progress {
+    background-color: #F27A00;
+    position: relative;
+    top: -12px; }
+  /* line 109, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
   #quiz .answers {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%; }
-    /* line 103, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+    /* line 114, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
     #quiz .answers li {
       height: 3em;
       color: #fff;
       text-shadow: 0 1px 0 rgba(0, 1, 1, 0.5);
       padding-top: .625em;
       cursor: pointer; }
-    /* line 110, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+    /* line 121, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
     #quiz .answers [data-idx="0"] {
       background-color: #00A0B0; }
-    /* line 113, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+    /* line 124, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
     #quiz .answers [data-idx="1"] {
       background-color: #CC333F; }
-    /* line 116, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+    /* line 127, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
     #quiz .answers [data-idx="2"] {
       background-color: #EB6841; }
-    /* line 119, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+    /* line 130, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
     #quiz .answers [data-idx="3"] {
       background-color: #EDC951; }
+  /* line 134, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+  #quiz .correct:before {
+    content: url("../images/correct-us.png");
+    position: absolute;
+    left: 12px; }
 
-/* line 125, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+/* line 141, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
 .doc {
   font-size: 14px;
   margin: 0; }
 
-/* line 128, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+/* line 144, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
 .doc:before,
 .doc:after {
   opacity: .2;
@@ -182,15 +198,15 @@ QUIZ
   position: relative;
   content: "•"; }
 
-/* line 135, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+/* line 151, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
 .doc a {
   color: rgba(0, 0, 0, 0.3); }
 
-/* line 137, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+/* line 153, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
 .doc a:hover {
   color: #666; }
 
-/* line 140, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+/* line 156, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
 .welcome {
   -webkit-animation-name: welcome;
   -webkit-animation-duration: .9s; }
