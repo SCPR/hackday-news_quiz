@@ -5,3 +5,10 @@
     - for a,idx in @answers
         %li{:data => { :idx => idx }}
             = a
+
+- if @answered
+    %p.explainer
+        = @explainer
+
+    %button.next
+        Go On!
