@@ -1,0 +1,210 @@
+@charset "UTF-8";
+/* line 5, /Users/eric/projects/scpr/quiz-demo/.bundle/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+/* line 22, /Users/eric/projects/scpr/quiz-demo/.bundle/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1; }
+
+/* line 24, /Users/eric/projects/scpr/quiz-demo/.bundle/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none; }
+
+/* line 26, /Users/eric/projects/scpr/quiz-demo/.bundle/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 28, /Users/eric/projects/scpr/quiz-demo/.bundle/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+/* line 30, /Users/eric/projects/scpr/quiz-demo/.bundle/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none; }
+  /* line 103, /Users/eric/projects/scpr/quiz-demo/.bundle/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+/* line 32, /Users/eric/projects/scpr/quiz-demo/.bundle/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none; }
+
+/* line 116, /Users/eric/projects/scpr/quiz-demo/.bundle/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+/* line 4, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+body {
+  background-image: url("../images/background.png");
+  text-align: center;
+  font-family: sans-serif;
+  color: #222; }
+
+/***************
+FONTS
+****************/
+@font-face {
+  font-family: 'proxima';
+  src: url("http://marketplace.org/sites/default/themes/marketplacev2Responsive/fonts/proximanova-bold-webfont-webfont.eot");
+  src: url("http://marketplace.org/sites/default/themes/marketplacev2Responsive/fonts/proximanova-bold-webfont-webfont.eot?#iefix") format("embedded-opentype"), url("http://marketplace.org/sites/default/themes/marketplacev2Responsive/fonts/proximanova-bold-webfont-webfont.woff") format("woff"), url("http://marketplace.org/sites/default/themes/marketplacev2Responsive/fonts/proximanova-bold-webfont-webfont.ttf") format("truetype"), url("http://marketplace.org/sites/default/themes/marketplacev2Responsive/fonts/proximanova-bold-webfont-webfont.svg#proxima_nova_rgbold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/************
+HEADER
+*************/
+/* line 30, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+header {
+  background-color: #3D3D3D;
+  height: 2.825em; }
+  /* line 33, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+  header img {
+    width: 2em;
+    display: inline-block;
+    position: relative;
+    top: .425em; }
+
+/* line 41, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+h1 {
+  display: inline-block;
+  font-family: "proxima", helvetica, arial, sans-serif;
+  font-weight: normal;
+  font-size: 1.25em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  color: #fff;
+  padding: 10px;
+  margin: 0; }
+
+/***************
+QUIZ
+****************/
+/* line 57, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+#quiz {
+  padding: .75em 0 0;
+  line-height: 1.2;
+  max-width: 40em;
+  margin: 0 auto; }
+  /* line 62, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+  #quiz h2 {
+    padding: 0 1rem .625em;
+    text-align: left;
+    font-size: 1em; }
+  /* line 67, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+  #quiz p {
+    font-size: 13px;
+    line-height: 18px;
+    padding: 5px 0 2px;
+    margin: 0 1rem;
+    font-family: georgia, serif;
+    text-align: left; }
+  /* line 75, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+  #quiz button {
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    width: 66.66666%;
+    left: 16.6666665%;
+    bottom: 1em;
+    font-family: "proxima";
+    font-size: 2em;
+    background-color: #00B8F9;
+    border: none;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.28);
+    -moz-box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.28);
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.28); }
+  /* line 92, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+  #quiz .question {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0 1em;
+    text-align: left; }
+  /* line 98, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+  #quiz .answers {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; }
+    /* line 103, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+    #quiz .answers li {
+      height: 3em;
+      color: #fff;
+      text-shadow: 0 1px 0 rgba(0, 1, 1, 0.5);
+      padding-top: .625em;
+      cursor: pointer; }
+    /* line 110, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+    #quiz .answers [data-idx="0"] {
+      background-color: #00A0B0; }
+    /* line 113, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+    #quiz .answers [data-idx="1"] {
+      background-color: #CC333F; }
+    /* line 116, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+    #quiz .answers [data-idx="2"] {
+      background-color: #EB6841; }
+    /* line 119, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+    #quiz .answers [data-idx="3"] {
+      background-color: #EDC951; }
+
+/* line 125, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+.doc {
+  font-size: 14px;
+  margin: 0; }
+
+/* line 128, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+.doc:before,
+.doc:after {
+  opacity: .2;
+  padding: 6px;
+  font-style: normal;
+  position: relative;
+  content: "•"; }
+
+/* line 135, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+.doc a {
+  color: rgba(0, 0, 0, 0.3); }
+
+/* line 137, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+.doc a:hover {
+  color: #666; }
+
+/* line 140, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+.welcome {
+  -webkit-animation-name: welcome;
+  -webkit-animation-duration: .9s; }
+
+@-webkit-keyframes welcome {
+  from {
+    -webkit-transform: scale(0);
+    opacity: 0; }
+  50% {
+    -webkit-transform: scale(0);
+    opacity: 0; }
+  82.5% {
+    -webkit-transform: scale(1.03);
+    -webkit-animation-timing-function: ease-out;
+    opacity: 1; }
+  to {
+    -webkit-transform: scale(1); } }

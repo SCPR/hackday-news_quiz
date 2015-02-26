@@ -1,0 +1,21 @@
+(function() {
+  if (window.JST == null) {
+    window.JST = {};
+  }
+
+  window.JST['results'] = function(context) {
+    return (function() {
+      var $c, $e, $o;
+      $e = window.HAML.escape;
+      $c = window.HAML.cleanValue;
+      $o = [];
+      $o.push("<h2>Done!</h2>\n<p>\n  You got");
+      $o.push("  " + $e($c(this.score)));
+      $o.push("  points, in");
+      $o.push("  " + $e($c(this.human_time)));
+      $o.push("  <div class=''></div>\n</p>");
+      return $o.join("\n").replace(/\s([\w-]+)='true'/mg, ' $1').replace(/\s([\w-]+)='false'/mg, '').replace(/\s(?:id|class)=(['"])(\1)/mg, "");
+    }).call(window.HAML.context(context));
+  };
+
+}).call(this);
