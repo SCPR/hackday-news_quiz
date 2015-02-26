@@ -1,8 +1,0 @@
-%h2 Done!
-
-%p
-    You got
-    = @score
-    points, in
-    = @human_time
-    .
