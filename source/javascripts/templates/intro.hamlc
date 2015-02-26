@@ -1,7 +1,9 @@
-%h2 Welcome
+%h2 Welcome to KPCC’s news quiz, a weekly set of current events questions that round up the top headlines from around Southern California. We encourage you to play, learn and brag about your score.
 
-%p
-    Quiz explainer...
+%p Here’s how it works:There are a total of twelve questions. You’ll have 30 seconds to answer each one. The quicker you answer, the more points you’ll get. If you run out of time, no points for you that round. Sorry, folks.
+
+%p We’ll rank your scores by region, and our official sponsor, Kombucha Dog, will give out prizes along the way. We’ll also host quarterly trivia nights around SoCal where the top-ranked players will battle it out for the title of Newsiest Person of the Year.
+
 
 %button.play
     Start!
