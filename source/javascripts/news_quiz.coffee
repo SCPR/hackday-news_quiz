@@ -155,13 +155,10 @@ class window.NewsQuiz
 
             @_tInt = setInterval =>
                 taken = _.now() - @_start_time
-                #console.log "Remaining time is ", @seconds - taken
 
-                if taken > @seconds
+                if _.now() > @_expires
                     console.log "Time expired. Now what?"
-                    @_end_time = _.now()
-                    @trigger "expired"
-                    clearInterval @_tInt
+                    @_answer(null)
             , 200
 
             update = =>
@@ -188,7 +185,7 @@ class window.NewsQuiz
 
             @_answered = true
             @_endTimer (time) =>
-                answer_idx = evt.currentTarget.dataset.idx
+                answer_idx = if evt then evt.currentTarget.dataset.idx else -1
                 console.log "click was on answer #", answer_idx
                 @trigger "answer", @model, answer_idx, time
 

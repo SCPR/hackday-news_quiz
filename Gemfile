@@ -16,3 +16,4 @@ gem "tzinfo-data", platforms: [:mswin, :mingw]
 gem "haml_coffee_assets"
 
 gem "jquery-middleman"
+gem 'middleman-gh-pages'
