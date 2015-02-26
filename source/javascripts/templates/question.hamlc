@@ -1,0 +1,7 @@
+.question
+    = @question
+
+%ul.answers
+    - for a,idx in @answers
+        %li{:data => { :idx => idx }}
+            = a

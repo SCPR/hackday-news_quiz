@@ -1,0 +1,7 @@
+%h2 Welcome
+
+%p
+    Quiz explainer...
+
+%button.play
+    Start!
