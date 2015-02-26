@@ -3,7 +3,8 @@
 
 %ul.answers
     - for a,idx in @answers
-        %li{:data => { :idx => idx }}
+        - cname = @answered && idx == @correct then "correct" else ""
+        %li{:data => { :idx => idx }, :class => cname}
             = a
 
 - if @answered

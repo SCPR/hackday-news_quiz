@@ -4,12 +4,14 @@ class window.NewsQuiz
     constructor: (data) ->
         @$el = $("#quiz")
         @questions  = new NewsQuiz.Questions data.questions
-        @answers    = new NewsQuiz.Answers {}
+        @answers    = new NewsQuiz.Answers
 
         @_view = null
         @_idx  = -1
 
         @displayIntro()
+
+    #----------
 
     displayIntro: ->
         @_view = new NewsQuiz.IntroView
@@ -18,16 +20,29 @@ class window.NewsQuiz
 
         @$el.html @_view.render().el
 
+    #----------
+
+    displayResults: ->
+        @_view = new NewsQuiz.ResultsView collection:@answers
+        @$el.html @_view.render().el
+
+    #----------
+
     displayQuestion: (idx) ->
         @_view = new NewsQuiz.QuestionView model:@questions.at(idx)
         @$el.html @_view.render().el
 
-        # FIXME: attach events
+        # question view will emit answer when an answer is clicked. we log it,
+        # but leave the question view up so that they get the explainer
         @_view.once "answer", (model,clicked_idx,time_taken) =>
             @_scoreAnswer model,clicked_idx,time_taken
 
+        # when they click the next button, we flip questions and get started
+        # with a new timer
         @_view.once "next", =>
             @displayNextQuestion()
+
+    #----------
 
     displayNextQuestion: ->
         @_idx += 1
@@ -37,11 +52,13 @@ class window.NewsQuiz
         else
             @displayResults()
 
+    #----------
+
     _scoreAnswer: (model,clicked_idx,time_taken) ->
         # is this answer correct?
-        correct = if model.correct == clicked_idx then true else false
+        correct = if model.get("correct") == Number(clicked_idx) then true else false
         answer = @answers.add question:model, correct:correct, time_taken:time_taken
-        console.log "Answer logged.", answer
+        console.log "Answer logged.", answer, correct
 
     #----------
 
@@ -55,11 +72,38 @@ class window.NewsQuiz
     #----------
 
     class @Answer extends Backbone.Model
+        score: ->
+            # if our answer is correct, score it based on time taken
+            if @attributes.correct
+                Math.round 50 * ( 1 - ( @attributes.time_taken / 30000 ) )
+            else
+                0
+
+        toJSON: ->
+            score:      @score()
+            time_taken: @attributes.time_taken
+            question:   @attributes.question
 
     #----------
 
     class @Answers extends Backbone.Collection
         model: NewsQuiz.Answer
+
+        toJSON: ->
+            total_time  = 0
+            total_score = 0
+
+            answers = @map (a) ->
+                obj = a.toJSON()
+
+                total_time  += obj.time_taken
+                total_score += obj.score
+
+                obj
+
+            answers:    answers
+            score:      total_score
+            time:       total_time
 
     #----------
 
@@ -76,6 +120,8 @@ class window.NewsQuiz
         render: ->
             @$el.html @template()
             @
+
+    #----------
 
     class @QuestionView extends Backbone.View
         template: JST["question"]
@@ -133,4 +179,12 @@ class window.NewsQuiz
 
             # FIXME: there's a cleaner place to trigger this, I'm sure
             @_startTimer() if !@tInt && !@_answered
+            @
+    #----------
+
+    class @ResultsView extends Backbone.View
+        template: JST["results"]
+
+        render: ->
+            @$el.html @template @collection.toJSON()
             @
