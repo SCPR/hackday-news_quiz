@@ -1,6 +1,5 @@
-.index
-    Question #{ @index }
 .question
+    Question #{ @index }:
     = @question
 
 %div{:style => "width:300px"}
