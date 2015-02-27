@@ -184,12 +184,17 @@ QUIZ
     position: absolute;
     left: 12px; }
 
-/* line 141, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+/* line 140, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+.share {
+  width: 100px;
+  margin: 0 auto; }
+
+/* line 145, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
 .doc {
   font-size: 14px;
   margin: 0; }
 
-/* line 144, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+/* line 148, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
 .doc:before,
 .doc:after {
   opacity: .2;
@@ -198,15 +203,15 @@ QUIZ
   position: relative;
   content: "•"; }
 
-/* line 151, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+/* line 155, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
 .doc a {
   color: rgba(0, 0, 0, 0.3); }
 
-/* line 153, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+/* line 157, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
 .doc a:hover {
   color: #666; }
 
-/* line 156, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
+/* line 160, /Users/eric/projects/scpr/quiz-demo/source/stylesheets/all.css.scss */
 .welcome {
   -webkit-animation-name: welcome;
   -webkit-animation-duration: .9s; }

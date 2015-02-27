@@ -5,16 +5,10 @@
 
   window.JST['results'] = function(context) {
     return (function() {
-      var $c, $e, $o;
-      $e = window.HAML.escape;
-      $c = window.HAML.cleanValue;
+      var $o;
       $o = [];
-      $o.push("<h2>Congrats!</h2>\n<p>\n  You got a score of ");
-      $o.push("  " + $e($c(this.score)));
-      $o.push("  points, in");
-      $o.push("  " + $e($c(this.human_time)));
-      $o.push("  You are well on your way to becoming the KPCC’s Newsiest Person of the Year.\n</p>\n<p>Want to brag about your achievement? Tell your friends on Twitter and Facebook.</p>");
-      return $o.join("\n").replace(/\s([\w-]+)='true'/mg, ' $1').replace(/\s([\w-]+)='false'/mg, '');
+      $o.push("<h2>Congrats!</h2>\n<p>\n  You got a score of " + this.score + " points, in " + this.human_time + ".\n</p>\n<p>You are well on your way to becoming the KPCC’s Newsiest Person of the Year.</p>\n<p>Want to brag about your achievement? Tell your friends on Twitter and Facebook.</p>\n<div class='share'>\n  <img src='images/twitter.jpg' style='width:40px;margin-right:20px;float:left;'>\n  <img src='images/facebook.jpg' style='width:40px;float:left;'>\n</div>");
+      return $o.join("\n").replace(/\s(?:id|class)=(['"])(\1)/mg, "");
     }).call(window.HAML.context(context));
   };
 
